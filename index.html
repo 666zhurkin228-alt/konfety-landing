@@ -147,6 +147,58 @@
     .sticky{display:block;position:fixed;left:0;right:0;bottom:0;padding:12px 16px;
       background:rgba(247,241,230,.95);backdrop-filter:blur(6px);border-top:1px solid var(--line);z-index:10}
   }
+  /* ===== Новогоднее оформление всей страницы ===== */
+  :root{--night:#0e1f3a;--night2:#15304f;--snow:#f4f8ff;--gold-l:#e8b94a;--xred:#a51f1f;--on-night:#eef2f8;--on-night-muted:#b9c6d9}
+  html{background:var(--night)}
+  body{color:var(--on-night);background:
+    radial-gradient(1.5px 1.5px at 20px 30px,rgba(255,255,255,.6),transparent 60%),
+    radial-gradient(1px 1px at 95px 85px,rgba(255,255,255,.45),transparent 60%),
+    radial-gradient(1.5px 1.5px at 165px 20px,rgba(255,255,255,.35),transparent 60%),
+    radial-gradient(1px 1px at 135px 140px,rgba(255,255,255,.5),transparent 60%),
+    radial-gradient(1px 1px at 50px 120px,rgba(232,185,74,.5),transparent 60%),
+    linear-gradient(180deg,var(--night) 0%,var(--night2) 55%,#1b3a5e 100%);
+    background-size:200px 160px,200px 160px,200px 160px,200px 160px,200px 160px,100% 100%}
+
+  .hero{background:radial-gradient(ellipse at 75% 20%,rgba(60,100,160,.5),transparent 55%);border-radius:0}
+  section.block{border-top:0}
+  h2{color:#f6e7c4}
+  section.block h2::before{content:"❄";color:var(--gold-l);margin-right:12px;font-size:.8em;vertical-align:.08em}
+  .note{color:var(--on-night-muted)}
+
+  /* Светлые карточки-«бирки» со снежными шапками */
+  .feat,.list,.whom div,.steps li,.faq div{color:var(--ink);position:relative;border-color:#ead9b8;box-shadow:0 10px 26px rgba(0,0,0,.28)}
+  .feat::after,.list::after,.whom div::after,.steps li::after,.faq div::after{content:"";position:absolute;left:12px;right:20px;top:-8px;height:15px;
+    background:var(--snow);border-radius:14px 20px 10px 18px / 10px 13px 8px 11px;box-shadow:0 2px 3px rgba(70,100,145,.35)}
+  .steps li::after{left:16px}
+  .comp-photo{box-shadow:0 14px 34px rgba(0,0,0,.4)}
+
+  /* Сугробы */
+  .drift{position:absolute;left:0;right:0;bottom:-1px;height:38px;pointer-events:none}
+  .drift svg{width:100%;height:100%;display:block}
+
+  /* Форма заказа — подарочная коробка */
+  .cta{position:relative;background:linear-gradient(160deg,#c0302a 0%,#8d1818 100%);margin-top:72px;
+    box-shadow:0 18px 44px rgba(0,0,0,.4),inset 0 0 0 3px rgba(232,185,74,.55)}
+  .cta::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:16px;transform:translateX(-50%);
+    background:linear-gradient(90deg,#c9982e,#f0cc6a,#c9982e);opacity:.25;pointer-events:none}
+  .cta > *{position:relative}
+  .bow{position:absolute;top:-34px;left:50%;transform:translateX(-50%);font-size:56px;line-height:1;filter:drop-shadow(0 4px 6px rgba(0,0,0,.35))}
+  .qty button{color:var(--xred)}
+  .qty button:hover{background:#fbeaea}
+  .preview{background:rgba(0,0,0,.18)}
+
+  /* Подвал — снежная земля */
+  footer{position:relative;margin-top:30px;padding:0;color:var(--ink)}
+  footer .ground{background:var(--snow);padding:18px 16px 40px;font-weight:600}
+  footer .ground small{display:block;font-weight:400;color:var(--muted);margin-top:4px}
+  footer .drift{position:static;height:44px}
+
+  .sticky{background:rgba(14,31,58,.92);border-top-color:rgba(255,255,255,.12)}
+  @media (max-width:820px){
+    body{padding-bottom:0}
+    footer .ground{padding-bottom:110px}
+    .bow{font-size:46px;top:-28px}
+  }
 </style>
 </head>
 <body>
@@ -168,6 +220,9 @@
     <div class="hero-photo">
       <img src="box.jpg" alt="Крафт-коробка с окошком, внутри конфеты, перевязана золотой лентой" width="1216" height="1280">
     </div>
+  </div>
+  <div class="drift" aria-hidden="true">
+    <svg viewBox="0 0 1200 40" preserveAspectRatio="none"><path d="M0 40 V22 C80 6 160 30 260 18 S430 2 540 16 S720 32 830 14 S1020 4 1100 20 S1180 26 1200 18 V40 Z" fill="rgba(244,248,255,.18)"/><path d="M0 40 V30 C120 18 210 36 330 26 S520 14 640 28 S860 38 960 26 S1140 20 1200 30 V40 Z" fill="rgba(244,248,255,.35)"/></svg>
   </div>
 </header>
 
@@ -246,6 +301,7 @@
 
 <div class="wrap">
   <div class="cta" id="order">
+    <div class="bow" aria-hidden="true">🎀</div>
     <h2>Оформить заказ</h2>
     <p>699 ₽ за набор · открытка в подарок · оплата при получении</p>
 
@@ -268,7 +324,7 @@
       <div>
         <label>Ваше сообщение</label>
         <div class="preview" id="preview"></div>
-        <a class="btn" id="send" href="#" target="_blank" rel="noopener" style="background:#fff;color:var(--green)">
+        <a class="btn" id="send" href="#" target="_blank" rel="noopener" style="background:#fff;color:#a51f1f">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.8 15.3 9.6 19c.4 0 .6-.2.8-.4l2-1.9 4.1 3c.8.4 1.3.2 1.5-.7l2.7-12.7c.3-1.1-.4-1.6-1.1-1.3L3.7 10.1c-1.1.4-1.1 1-.2 1.3l4.1 1.3 9.5-6c.4-.3.9-.1.6.2z"/></svg>
           Отправить в Telegram
         </a>
@@ -278,7 +334,12 @@
   </div>
 </div>
 
-<footer>Вкус детства · подарочные наборы конфет</footer>
+<footer>
+  <div class="drift" aria-hidden="true">
+    <svg viewBox="0 0 1200 44" preserveAspectRatio="none"><path d="M0 44 V26 C90 8 180 30 300 16 S500 0 620 18 S820 36 940 16 S1120 6 1200 22 V44 Z" fill="#f4f8ff"/></svg>
+  </div>
+  <div class="ground">С наступающим Новым годом! 🎄<small>Вкус детства · подарочные наборы конфет</small></div>
+</footer>
 
 <div class="sticky">
   <a class="btn" href="#order">Заказать за 699 ₽</a>
