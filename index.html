@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Вкус детства — подарочные наборы конфет</title>
+<meta name="description" content="Новогодний бокс 500 г: 13 видов советской классики — Птичье молоко, Мишка косолапый, Белочка, Красная шапочка и другие. 699 ₽.">
+
+<!-- Превью ссылки в Telegram/VK. ЗАМЕНИТЕ https://ВАШ-ДОМЕН на адрес сайта на Amvera -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Вкус детства — 13 видов советских конфет в подарочном боксе">
+<meta property="og:description" content="500 г, 699 ₽. Птичье молоко, Мишка косолапый, Белочка, Красная шапочка, Халва и другие.">
+<meta property="og:image" content="https://ВАШ-ДОМЕН/box.jpg">
+<meta property="og:url" content="https://ВАШ-ДОМЕН/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#f7f1e6; --card:#fffaf1; --ink:#2b1d14; --muted:#6e5a4a;
+    --kraft:#d9c3a0; --gold:#c9982e; --gold-dark:#a87a17;
+    --red:#b3261e; --green:#2f6b3a; --line:#e6d8bf;
+  }
+  *{box-sizing:border-box}
+  html{color-scheme:light}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Manrope,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.55}
+  img{max-width:100%;height:auto;display:block}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+  h1,h2{font-family:Lora,Georgia,serif;line-height:1.15;margin:0}
+  h2{font-size:clamp(26px,4vw,34px);margin-bottom:18px}
+
+  /* Hero */
+  .hero{padding:40px 0 48px}
+  .hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center}
+  .eyebrow{display:inline-block;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--red);background:#fbe3dc;padding:6px 12px;border-radius:999px;margin-bottom:16px}
+  h1{font-size:clamp(34px,6vw,54px);margin-bottom:16px}
+  h1 em{font-style:normal;color:var(--gold-dark)}
+  .lead{font-size:19px;color:var(--muted);margin:0 0 24px}
+  .price-row{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:22px}
+  .price{font-family:Lora,Georgia,serif;font-size:44px;font-weight:700}
+  .weight{color:var(--muted);font-weight:600}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#fff;text-decoration:none;
+    font-weight:700;font-size:18px;padding:16px 26px;border-radius:14px;box-shadow:0 6px 18px rgba(169,122,23,.3);
+    transition:background .15s,transform .15s}
+  .btn:hover{background:var(--gold-dark);transform:translateY(-1px)}
+  .btn svg{width:22px;height:22px;fill:currentColor}
+  .stock{margin-top:14px;font-weight:600;color:var(--red)}
+  .hero-photo{border-radius:22px;overflow:hidden;box-shadow:0 18px 40px rgba(60,35,10,.22)}
+
+  /* Features */
+  .features{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:8px 0 56px}
+  .feat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+  .feat b{display:block;font-family:Lora,Georgia,serif;font-size:28px;color:var(--gold-dark)}
+  .feat span{color:var(--muted);font-size:15px}
+
+  /* Composition */
+  section.block{padding:48px 0;border-top:1px solid var(--line)}
+  .comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+  .comp-photo{border-radius:18px;overflow:hidden;box-shadow:0 10px 26px rgba(60,35,10,.15)}
+  .list{list-style:none;margin:0;padding:0;background:var(--card);border:1px solid var(--line);border-radius:16px}
+  .list li{display:flex;justify-content:space-between;gap:12px;padding:11px 18px;border-bottom:1px dashed var(--line)}
+  .list li:last-child{border-bottom:0}
+  .list .n{color:var(--muted);white-space:nowrap}
+  .list .tot{font-weight:700;background:#f3e7d1;border-radius:0 0 16px 16px}
+  .note{font-size:14px;color:var(--muted);margin-top:12px}
+
+  /* For whom */
+  .whom{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .whom div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+  .whom h3{margin:0 0 6px;font-size:19px}
+  .whom p{margin:0;color:var(--muted);font-size:15.5px}
+
+  /* Steps */
+  .steps{counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:0;margin:0;list-style:none}
+  .steps li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 22px 22px 70px;position:relative}
+  .steps li::before{content:counter(s);position:absolute;left:20px;top:20px;width:34px;height:34px;border-radius:50%;
+    background:var(--gold);color:#fff;font-weight:700;display:grid;place-items:center}
+
+  /* Final CTA */
+  .cta{background:var(--green);color:#fff;border-radius:24px;padding:40px 28px;text-align:center;margin:48px 0}
+  .cta h2{color:#fff}
+  .cta p{opacity:.9;margin:0 0 22px}
+  footer{text-align:center;color:var(--muted);font-size:14px;padding:0 0 36px}
+
+  /* Sticky mobile button */
+  .sticky{display:none}
+
+  @media (max-width:820px){
+    .hero{padding:24px 0 32px}
+    .hero-grid,.comp-grid{grid-template-columns:1fr;gap:26px}
+    .hero-photo{order:-1}
+    .features{grid-template-columns:repeat(2,1fr)}
+    .whom,.steps{grid-template-columns:1fr}
+    .btn{width:100%;justify-content:center}
+    body{padding-bottom:84px}
+    .sticky{display:block;position:fixed;left:0;right:0;bottom:0;padding:12px 16px;
+      background:rgba(247,241,230,.95);backdrop-filter:blur(6px);border-top:1px solid var(--line);z-index:10}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Новогодний подарок</span>
+      <h1>Вкус детства <em>в одной коробке</em></h1>
+      <p class="lead">13 видов советских конфет, которые все помнят: «Птичье молоко», «Мишка косолапый», «Белочка», «Красная шапочка» и другие. Готовый подарок в крафт-коробке с золотой лентой, упаковывать не нужно.</p>
+      <div class="price-row">
+        <span class="price">699 ₽</span>
+        <span class="weight">набор 500 г · 31 конфета</span>
+      </div>
+      <a class="btn tg-link" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.8 15.3 9.6 19c.4 0 .6-.2.8-.4l2-1.9 4.1 3c.8.4 1.3.2 1.5-.7l2.7-12.7c.3-1.1-.4-1.6-1.1-1.3L3.7 10.1c-1.1.4-1.1 1-.2 1.3l4.1 1.3 9.5-6c.4-.3.9-.1.6.2z"/></svg>
+        Заказать в Telegram
+      </a>
+      <div class="stock">Первая партия — всего 10 наборов</div>
+    </div>
+    <div class="hero-photo">
+      <img src="box.jpg" alt="Крафт-коробка с окошком, внутри конфеты, перевязана золотой лентой" width="1216" height="1280">
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="features">
+    <div class="feat"><b>13</b><span>видов конфет в каждом наборе</span></div>
+    <div class="feat"><b>500 г</b><span>не меньше, взвешено честно</span></div>
+    <div class="feat"><b>🎀</b><span>готовая подарочная упаковка</span></div>
+    <div class="feat"><b>10</b><span>наборов в первой партии</span></div>
+  </div>
+</div>
+
+<section class="block">
+  <div class="wrap">
+    <h2>Что внутри</h2>
+    <div class="comp-grid">
+      <div class="comp-photo">
+        <img src="sostav.jpg" alt="Содержимое одного набора, разложенное на столе" width="1280" height="1007" loading="lazy">
+      </div>
+      <div>
+        <ul class="list">
+          <li><span>Птичье молоко</span><span class="n">6 шт.</span></li>
+          <li><span>Грильяж</span><span class="n">4 шт.</span></li>
+          <li><span>Бабаевские шоколадные</span><span class="n">3 шт.</span></li>
+          <li><span>Мишка косолапый</span><span class="n">2 шт.</span></li>
+          <li><span>Белочка</span><span class="n">2 шт.</span></li>
+          <li><span>Красная шапочка</span><span class="n">2 шт.</span></li>
+          <li><span>Красный мак</span><span class="n">2 шт.</span></li>
+          <li><span>Халва глазированная</span><span class="n">2 шт.</span></li>
+          <li><span>Вафельная «Коровка»</span><span class="n">2 шт.</span></li>
+          <li><span>Кедровый орех «Дары Сибири»</span><span class="n">2 шт.</span></li>
+          <li><span>Батончик</span><span class="n">2 шт.</span></li>
+          <li><span>Трюфель</span><span class="n">1 шт.</span></li>
+          <li><span>Бабаевские</span><span class="n">1 шт.</span></li>
+          <li class="tot"><span>Итого</span><span class="n">31 конфета · от 500 г</span></li>
+        </ul>
+        <p class="note">Конфеты фабричные, в оригинальных обёртках. Состав может немного отличаться по фото. Внимание: в наборе есть конфеты с орехами.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <h2>Кому подарить</h2>
+    <div class="whom">
+      <div><h3>Коллегам</h3><p>Недорогой подарок, который точно съедят. Нужно несколько наборов для отдела? Напишите, соберу к нужной дате.</p></div>
+      <div><h3>Учителям и воспитателям</h3><p>Красиво, приятно и без лишнего пафоса. Подходит, чтобы скинуться всем классом.</p></div>
+      <div><h3>Родителям и бабушкам</h3><p>Те самые конфеты из детства: повод вспомнить и поговорить за чаем.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <h2>Как заказать</h2>
+    <ol class="steps">
+      <li><b>Напишите в Telegram</b><br><span style="color:var(--muted)">сколько наборов нужно</span></li>
+      <li><b>Договоримся</b><br><span style="color:var(--muted)">о дате и месте: самовывоз или доставка</span></li>
+      <li><b>Забираете подарок</b><br><span style="color:var(--muted)">уже упакованный, с лентой</span></li>
+    </ol>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="cta">
+    <h2>Забронируйте набор, пока они есть</h2>
+    <p>699 ₽ · 500 г · 13 видов конфет</p>
+    <a class="btn tg-link" href="#" target="_blank" rel="noopener" style="background:#fff;color:var(--green)">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.8 15.3 9.6 19c.4 0 .6-.2.8-.4l2-1.9 4.1 3c.8.4 1.3.2 1.5-.7l2.7-12.7c.3-1.1-.4-1.6-1.1-1.3L3.7 10.1c-1.1.4-1.1 1-.2 1.3l4.1 1.3 9.5-6c.4-.3.9-.1.6.2z"/></svg>
+      Написать в Telegram
+    </a>
+  </div>
+</div>
+
+<footer>Вкус детства · подарочные наборы конфет</footer>
+
+<div class="sticky">
+  <a class="btn tg-link" href="#" target="_blank" rel="noopener">Заказать за 699 ₽ в Telegram</a>
+</div>
+
+<script>
+  // ▼▼▼ ВПИШИТЕ СВОЙ НИК В TELEGRAM (без @) ▼▼▼
+  var TG_USERNAME = "Fedor_Zhurkin";
+  // ▲▲▲
+
+  document.querySelectorAll(".tg-link").forEach(function (a) {
+    a.href = "https://t.me/" + TG_USERNAME;
+  });
+</script>
+</body>
+</html>
